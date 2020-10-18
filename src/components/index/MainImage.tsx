@@ -4,7 +4,6 @@ import React, { ReactElement } from "react";
 interface Props {
   imageUrl: string;
   title: string;
-  content: string;
 }
 
 const StyledMainImage = styled.section`
@@ -33,17 +32,12 @@ const StyledMainImage = styled.section`
   }
 `;
 
-export default function MainImage({
-  imageUrl,
-  title,
-  content,
-}: Props): ReactElement {
+export default function MainImage({ imageUrl, title }: Props): ReactElement {
   return (
     <StyledMainImage imageUrl={imageUrl}>
       <div className="bg-image"></div>
       <div className="text-area">
         <h1>{title}</h1>
-        <p>{content}</p>
       </div>
     </StyledMainImage>
   );

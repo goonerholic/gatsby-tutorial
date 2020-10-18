@@ -7,16 +7,12 @@ import avatar1 from "../images/avatar1.jpg";
 import avatar2 from "../images/avatar2.jpg";
 import avatar3 from "../images/avatar3.jpg";
 import InterviewContainer from "../containers/InterviewContainer";
+import IndexContainer from "../containers/IndexContainer";
 
 export default function Home() {
   return (
     <Layout>
-      <MainImage
-        imageUrl={mainImage}
-        title="Some fancy-looking bull-shits"
-        content="Fuck off..."
-      />
-      <InterviewContainer />
+      <IndexContainer />
     </Layout>
   );
 }

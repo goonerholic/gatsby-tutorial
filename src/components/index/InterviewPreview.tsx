@@ -2,29 +2,38 @@ import styled from "@emotion/styled";
 import { Carousel, Col, Row } from "antd";
 import React, { ReactElement } from "react";
 import Container from "../common/Container";
+import Img from "gatsby-image";
 
 interface Props {
   title: string;
-  imageSrc: string;
+  image: any;
   children: React.ReactNode;
+  minHeight: string;
 }
+
+const StyledContainer = styled(Container)`
+  min-height: ${({ minHeight }: { minHeight: string }) => minHeight};
+`;
 
 export default function InterviewPreview({
   title,
-  imageSrc,
+  image,
   children,
+  minHeight,
 }: Props): ReactElement {
+  const props = { title, image, children, minHeight };
+  console.log(typeof minHeight);
   return (
-    <Container>
+    <StyledContainer minHeight={minHeight}>
       <h1>{title}</h1>
       <div>
         <Row gutter={16}>
           <Col span={8}>
-            <img src={imageSrc} alt="..." style={{ width: "100%" }} />
+            <Img fluid={image} />
           </Col>
           <Col span={16}>{children}</Col>
         </Row>
       </div>
-    </Container>
+    </StyledContainer>
   );
 }

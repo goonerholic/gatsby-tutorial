@@ -9,10 +9,10 @@ const StyledContainer = styled.section`
   width: 998px;
   margin: 0 auto;
   margin-top: 4rem;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: flex-start; */
 `;
 
 export default function Container({ children }: Props): ReactElement {

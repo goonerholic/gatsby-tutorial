@@ -11,29 +11,32 @@ interface Props {
   minHeight: string;
 }
 
-const StyledContainer = styled(Container)`
-  min-height: ${({ minHeight }: { minHeight: string }) => minHeight};
-`;
-
 export default function InterviewPreview({
   title,
   image,
   children,
-  minHeight,
 }: Props): ReactElement {
-  const props = { title, image, children, minHeight };
-  console.log(typeof minHeight);
+  const props = { title, image, children };
+
   return (
-    <StyledContainer minHeight={minHeight}>
+    <Container>
       <h1>{title}</h1>
       <div>
         <Row gutter={16}>
           <Col span={8}>
-            <Img fluid={image} />
+            <img
+              data-sal="slide-right"
+              data-sal-easing="ease"
+              data-sal-delay="500"
+              data-sal-duration="500"
+              src={image.src}
+              alt="..."
+              style={{ width: "100%", height: "auto" }}
+            />
           </Col>
           <Col span={16}>{children}</Col>
         </Row>
       </div>
-    </StyledContainer>
+    </Container>
   );
 }

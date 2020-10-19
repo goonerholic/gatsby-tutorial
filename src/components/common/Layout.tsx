@@ -3,6 +3,7 @@ import Header from "./Header";
 import styled from "@emotion/styled";
 import Helmet from "react-helmet";
 import { graphql, useStaticQuery } from "gatsby";
+import Footer from "./Footer";
 
 interface Props {
   children: React.ReactNode;
@@ -27,6 +28,7 @@ export default function Layout({ children, title }: Props): ReactElement {
       <Helmet title={title ? title : data.site.siteMetadata.title} />
       <Header />
       {children}
+      <Footer />
     </div>
   );
 }
